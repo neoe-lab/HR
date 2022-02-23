@@ -19,8 +19,9 @@ class CreateProfilesTable extends Migration
             $table->string('fname');
             $table->string('lname');
             $table->foreignId('department_id');
-            $table->string('address');
+            $table->text('address');
             $table->string('phone',10);
+            $table->string('path_file');
             $table->timestamps();
         });
     }

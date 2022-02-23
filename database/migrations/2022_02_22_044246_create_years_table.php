@@ -15,9 +15,9 @@ class CreateYearsTable extends Migration
     {
         Schema::create('years', function (Blueprint $table) {
             $table->id();
-            $table->string('year');
-            $table->integer('time');
-            $table->enum('status',['activate','deactivate']);
+            // $table->string('year');
+            // $table->string('time');
+            // $table->enum('status',['activate','deactivate']);
             $table->timestamps();
         });
     }

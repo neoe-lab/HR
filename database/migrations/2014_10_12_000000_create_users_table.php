@@ -20,6 +20,10 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->enum('status',['activate','deactivate']);
+            $table->foreignId('department_id');
+            $table->foreignId('permission_id');
+            $table->foreignId('group_id');
+            $table->foreignId('profile_id');
             $table->rememberToken();
             $table->timestamps();
         });

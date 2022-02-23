@@ -15,6 +15,11 @@ class CreateQuestionsTable extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
+            // $table->string('who');
+            // $table->foreignId('profile_id');
+            // $table->foreignId('year_id');
+            // $table->foreignId('question_id');
+            // $table->integer('score');
             $table->timestamps();
         });
     }
