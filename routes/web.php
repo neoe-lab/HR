@@ -4,38 +4,37 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\YearController;
+use App\Http\Controllers\QuestionController;
 
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+// ------------------------------ Authentication --------------------
 Route::get('/',function(){
 
-    return view('auth.login',['title'=>'login']);
+    return view('auth.login',['title'=>'login'])->name('login');
 });
 
-// home page
+//------------------------------- Home page -------------------------------
 Route::get('/home',[HomeController::class,'index'])->name('home');
 
 
-// usermanagement
+// ------------------------------  user management -------------------------------
 Route::get('/usermanagement',[UserController::class,'index'])->name('usermanagement');
 Route::get('usermanagement/new-user',[UserController::class,'new_user'])->name('new-user');
 
 
 
-// Department
+// ----------------------------------- Department -----------------------------
 Route::get('/department',[DepartmentController::class,'index'])->name('department');
 
 
-// view Profile
+//------------------------------------ view Profile ------------------------
 Route::get('/profile',function(){
     return view('usermanagement.profile_user');
 })->name('profile');
+
+// ---------------------------------- Year/Time -------------------------------
+Route::get('/times',[YearController::class,'index'])->name('view_times');
+
+// --------------------------------- evaluation ------------------------------
+Route::get('/performance',[QuestionController::class,'performance'])->name('performance');

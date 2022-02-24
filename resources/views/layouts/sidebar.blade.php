@@ -37,7 +37,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="index.html" class='sidebar-link'>
+                    <a href="{{ route('view_times')}}" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>กำหนดรอบการประเมิน</span>
                     </a>
@@ -70,6 +70,36 @@
                         </li>
                         <li class="submenu-item ">
                             <a href="#">การประเมินสัมพันธภาพ</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-title">ประเมิน</li>
+                <li class="sidebar-item  has-sub">
+                    <a href="#" class='sidebar-link'>
+                        <i class="bi bi-grid-1x2-fill"></i>
+                        <span>ประเมิน</span>
+                    </a>
+                    <ul class="submenu ">
+                        <li class="submenu-item ">
+                            <a href="{{ route('performance')}}">ประเมินสมรรถนะ</a>
+                        </li>
+                        <li class="submenu-item ">
+                            <a href="#">ประเมินสัมพันธภาพ</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="sidebar-item  has-sub">
+                    <a href="#" class='sidebar-link'>
+                        <i class="bi bi-grid-1x2-fill"></i>
+                        <span>รายงาน</span>
+                    </a>
+                    <ul class="submenu ">
+                        <li class="submenu-item ">
+                            <a href="#">รายงานประเมินสมรรถนะ</a>
+                        </li>
+                        <li class="submenu-item ">
+                            <a href="#">รายงานประเมินสัมพันธภาพ</a>
                         </li>
                     </ul>
                 </li>

@@ -1,11 +1,5 @@
 @extends('layouts.master')
 @section('content')
-<div id="main">
-    <header class="mb-3">
-        <a href="#" class="burger-btn d-block d-xl-none">
-            <i class="bi bi-justify fs-3"></i>
-        </a>
-    </header>
 
     <div class="page-heading">
         <div class="page-title">
@@ -32,6 +26,7 @@
                     <div class="card">
                         <div class="card-header">
                             {{-- <h5 class="card-title">Horizontal Navs</h5> --}}
+                            <button class="btn btn-light-secondary me-1 mb-1" onclick="history.back()">กลับ</button>
 
                         </div>
 
@@ -57,51 +52,120 @@
                                 {{-- tab 1 --}}
                                 <div class="tab-pane fade show active" id="one" role="tabpanel" aria-labelledby="home-tab">
 
-                                    <div class="card">
-                                        {{-- <div class="hearder">
-                                         <h4 class="card-title">Multiple Column</h4>
-                                        </div> --}}
-                                        <div class="card-content">
-                                            <div class="card-body">
-                                                <div class="row">
-                                                    <div class="col-md-6 col-12 justify-content-center">
-                                                        <div class="form-group">
-                                                            <label for="username">Username</label>
-                                                            <input type="text" id="first-name-column" class="form-control"
-                                                                placeholder="username" name="username">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 col-12 justify-content-center">
-                                                        <div class="form-group">
-                                                            <label for="first-name-column">Password</label>
-                                                            <input type="password" id="password" class="form-control"
-                                                                placeholder="password" name="password">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-2 col-12 justify-content-center">
-                                                        <div class="form-group">
-                                                            <label for="pname">คำนำหน้า</label>
-                                                            <input type="text" id="first-name-column" class="form-control"
-                                                                placeholder="คำนำหน้า" name="pname">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-5 col-12 justify-content-center">
-                                                        <div class="form-group">
-                                                            <label for="first-name-column">ชื่อต้น</label>
-                                                            <input type="text" id="first" class="form-control"
-                                                                placeholder="ชื่อต้น" name="fname">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-5 col-12 justify-content-center">
-                                                        <div class="form-group">
-                                                            <label for="first-name-column">นามสกุล</label>
-                                                            <input type="text" id="lname" class="form-control"
-                                                                placeholder="นามสกุล" name="lname">
+                                    <div class="col-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                {{-- <h4 class="card-title">Horizontal Form with Icons</h4> --}}
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-body">
+                                                    {{-- <form class="form form-horizontal"> --}}
+                                                        <div class="form-body">
+                                                            <div class="row">
+                                                                <div class="col-md-4">
+                                                                    <label>Username</label>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    <div class="form-group has-icon-left">
+                                                                        <div class="position-relative">
+                                                                            <input type="text" class="form-control"
+                                                                                placeholder="Username" id="first-name-icon" name="username">
+                                                                            <div class="form-control-icon">
+                                                                                <i class="bi bi-person"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                {{-- <div class="col-md-4">
+                                                                    <label>Email</label>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    <div class="form-group has-icon-left">
+                                                                        <div class="position-relative">
+                                                                            <input type="email" class="form-control"
+                                                                                placeholder="Email" id="first-name-icon">
+                                                                            <div class="form-control-icon">
+                                                                                <i class="bi bi-envelope"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div> --}}
+                                                                <div class="col-md-4">
+                                                                    <label>Password</label>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    <div class="form-group has-icon-left">
+                                                                        <div class="position-relative">
+                                                                            <input type="password" class="form-control"
+                                                                                placeholder="Password" name="password">
+                                                                            <div class="form-control-icon">
+                                                                                <i class="bi bi-lock"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <label>ระดับ</label>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    <div class="form-group has-icon-left">
+                                                                        <div class="position-relative">
+                                                                            <input type="password" class="form-control"
+                                                                                placeholder="ระดับ" name="level">
+                                                                            <div class="form-control-icon">
+                                                                                <i class="bi bi-lock"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <label>สิทธิ์</label>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    <div class="form-group has-icon-left">
+                                                                        <div class="position-relative">
+                                                                            <input type="password" class="form-control"
+                                                                                placeholder="สิทธิ์" >
+                                                                            <div class="form-control-icon">
+                                                                                <i class="bi bi-lock"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
 
+                                                                <div class="col-md-4">
+                                                                    <label>กลุ่มงาน</label>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    <div class="form-group has-icon-left">
+                                                                        <div class="position-relative">
+                                                                            <input type="password" class="form-control"
+                                                                                placeholder="Password">
+                                                                            <div class="form-control-icon">
+                                                                                <i class="bi bi-lock"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-4">
+                                                                    <label>สถานะ</label>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    <div class="form-group has-icon-left">
+                                                                        <div class="position-relative">
+                                                                            <input type="password" class="form-control"
+                                                                                placeholder="Password">
+                                                                            <div class="form-control-icon">
+                                                                                <i class="bi bi-lock"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
                                                         </div>
-                                                    </div>
-
-
+                                                    {{-- </form> --}}
                                                 </div>
                                             </div>
                                         </div>
@@ -111,15 +175,92 @@
 
                                 {{-- tab 2 --}}
                                 <div class="tab-pane fade" id="two" role="tabpanel" aria-labelledby="profile-tab">
-                                    <div class="col-md-5 col-12 justify-content-center">
-                                        <div class="form-group">
-                                            <label for="test">นามสกุล</label>
-                                            <input type="text" id="test" class="form-control"
-                                                placeholder="นามสกุล" name="test">
+                                    <div class="col-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                {{-- <h4 class="card-title">Horizontal Form with Icons</h4> --}}
+                                            </div>
+                                            <div class="card-content">
+                                                <div class="card-body">
+                                                    {{-- <form class="form form-horizontal"> --}}
+                                                        <div class="form-body">
+                                                            <div class="row">
 
+
+                                                                <div class="col-md-1">
+                                                                    <label>คำนำหน้า</label>
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <div class="form-group has-icon-left">
+                                                                        <div class="position-relative">
+                                                                            <input type="text" class="form-control"
+                                                                                placeholder="Name" id="first-name-icon">
+                                                                            <div class="form-control-icon">
+                                                                                <i class="bi bi-person"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-1">
+                                                                    <label>ชื่อต้น</label>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group has-icon-left">
+                                                                        <div class="position-relative">
+                                                                            <input type="text" class="form-control"
+                                                                                placeholder="Name" id="first-name-icon">
+                                                                            <div class="form-control-icon">
+                                                                                <i class="bi bi-person"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-1">
+                                                                    <label>นามสกุล</label>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group has-icon-left">
+                                                                        <div class="position-relative">
+                                                                            <input type="text" class="form-control"
+                                                                                placeholder="Name" id="first-name-icon">
+                                                                            <div class="form-control-icon">
+                                                                                <i class="bi bi-person"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+
+
+
+
+                                                                <div class="col-md-4">
+                                                                    <label>ที่อยู่</label>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    <div class="form-group has-icon-left">
+                                                                        <div class="position-relative">
+                                                                            <input type="number" class="form-control"
+                                                                                placeholder="Mobile">
+                                                                            <div class="form-control-icon">
+                                                                                <i class="bi bi-phone"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+
+                                                            </div>
+                                                        </div>
+                                                    {{-- </form> --}}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <span>tab 2</span>
                                 </div>
                                 {{-- end tab 2 --}}
 
@@ -129,8 +270,7 @@
                                 <div class="col-12 d-flex justify-content-end">
                                     <button type="submit"
                                         class="btn btn-primary me-1 mb-1">บันทึก</button>
-                                    <button type="reset"
-                                        class="btn btn-light-secondary me-1 mb-1">Reset</button>
+
                                 </div>
                             </div>
 
@@ -153,7 +293,7 @@
     </div>
 
 
-</div>
+
 
 
 
