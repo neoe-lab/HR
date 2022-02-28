@@ -6,12 +6,13 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\YearController;
 use App\Http\Controllers\QuestionController;
-
+use App\Models\Question;
 
 // ------------------------------ Authentication --------------------
 Route::get('/',function(){
 
-    return view('auth.login',['title'=>'login'])->name('login');
+    return view('auth.login');
+
 });
 
 //------------------------------- Home page -------------------------------
@@ -37,4 +38,10 @@ Route::get('/profile',function(){
 Route::get('/times',[YearController::class,'index'])->name('view_times');
 
 // --------------------------------- evaluation ------------------------------
-Route::get('/performance',[QuestionController::class,'performance'])->name('performance');
+// show person and self
+Route::get('/performance/list-person-performance',[QuestionController::class,'listPersonPerformance'])->name('list-person-performance');
+// show form evaluation performance
+Route::get('/performance/form',[QuestionController::class,'performance'])->name('form-performance');
+Route::post('/performance/answer',[QuestionController::class,'answerPerformance'])->name('answer');
+// show person and self questions
+

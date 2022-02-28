@@ -28,7 +28,10 @@
         {{-- start sidebar  --}}
         @include('layouts.sidebar')
         {{-- end sidebar --}}
+
+
     <div id="main" class='layout-navbar'>
+        {{-- start header --}}
         <header class='mb-3'>
             <nav class="navbar navbar-expand navbar-light ">
                 <div class="container-fluid">
@@ -77,11 +80,13 @@
                                     </div>
                                     <div class="user-img d-flex align-items-center">
                                         <div class="avatar avatar-md">
-                                            <img src="assets/images/faces/1.jpg">
+                                            <img src="{{URL::to('assets/images/faces/1.jpg')}}">
                                         </div>
                                     </div>
                                 </div>
                             </a>
+
+
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
                                 <li>
                                     <h6 class="dropdown-header">Hello, John!</h6>
@@ -103,12 +108,30 @@
                 </div>
             </nav>
         </header>
+        {{-- end header --}}
 
     <div id="main-content">
 
         {{-- start content --}}
         @yield('content')
         {{-- end content --}}
+
+
+
+
+        {{-- start footer --}}
+        <footer>
+            <div class="footer clearfix mb-0 text-muted">
+                <div class="float-start">
+                    <p>2021 &copy; TYD HOS</p>
+                </div>
+                <div class="float-end">
+                    <p>Crafted with <span class="text-sucsses"><i class="bi bi-person-fill"></i></span> by MR.NEOE</p>
+                </div>
+            </div>
+        </footer>
+        {{-- end footer --}}
+
     </div>
     </div>
 

@@ -10,7 +10,8 @@
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('list-person-performance') }}">ประเมินสมรรถนะ</a> </li>
                             <li class="breadcrumb-item active" aria-current="page">ฟอร์มการประเมิน
                             </li>
                         </ol>
@@ -19,7 +20,14 @@
             </div>
         </div>
 
-
+        @php
+        $level = 1;
+        @endphp
+        <form action=" {{ route('answer')}}" method="post">
+        @csrf
+        <input type="hidden" name="who" value="002">
+        <input type="hidden" name="me" value="006">
+        <input type="hidden" name="yesr" value="036">
         <section class="section">
             <div class="card">
                 <div class="card-header">
@@ -88,65 +96,119 @@
                             <p>คำอธิบาย : ความมุ่งมั่นจะปฏิบัติราชการให้ดีหรือให้เกินมาตรฐานที่มีอยู่โดยมาตรฐานนี้อาจเป็นผลการปฏิบัติงานที่ผ่านมาของตนเองหรือเกณฑ์วัดผลสัมฤทธิ์ที่ส่วนราชการกำหนดขึ้นอีกทั้งยังหมายรวมถึง การสร้างสรรค์พัฒนาผลงานหรือกระบวนการปฏิบัติงานตามเป้าหมายที่ยากและท้าทายชนิดที่อาจไม่เคยมีผู้ใดสามารถกระทำได้มาก่อน</p>
                         </div>
                     </div>
-                    <div class="row">
-
                         {{-- ระดับที่ 1 --}}
+
+                    <div class="row">
                         <div class="col-12">
                             <h6>ระดับที่ 1 : แสดงความมุ่งมั่นและกระตือรือร้นที่จะปฏิบัติราชการให้ดี(แสดงความพยายามในการทำงานให้ดี)</h6>
                         </div>
                         <div class="col-md-1">
                             <p>1.1</p>
+                            <input type="hidden" name="num11" value="11">
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-9">
                             พยายามทำงานในหน้าที่ให้ถูกต้อง
                         </div>
-                        <div class="col-md-5">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="flexRadioDefault1">
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                    Default radio
-                                </label>
+
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select" id="scoreselecter" name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
                             </div>
-
-
                         </div>
 
                         <div class="col-md-1">
                             <p>1.2</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             พยายามปฏิบัติงานให้แล้วเสร็จตามกำหนดเวลา
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select" id="scoreselecter" name ="score12">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="col-md-1">
                             <p>1.3</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             มานะ อดทน ขยันหมั่นเพียรในการทำงาน
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="inputGroupSelect01">คะแนน</label>
+                                <select class="form-select" id="inputGroupSelect01">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="col-md-1">
                             <p>1.4</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             แสดงออกว่าต้องการทำงานให้ดีขึ้น
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="inputGroupSelect01">คะแนน</label>
+                                <select class="form-select" id="inputGroupSelect01">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="col-md-1">
                             <p>1.5</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             แสดงความคิดเห็นเชิงปรับปรุงพัฒนาเมื่อเห็นสิ่งที่ก่อให้เกิดการสูญเปล่าหรือหย่อนประสิทธิภาพในงาน
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="inputGroupSelect01">คะแนน</label>
+                                <select class="form-select" id="inputGroupSelect01">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
 
 
 
-
                     </div>
-
-                        {{-- ระดับที่ 2 --}}
-
+                    @if ( $level == 2)
+                    {{-- ระดับที่ 2 --}}
                     <div class="row">
                         <div class="col-12">
                             <h6>ระดับที่ 2 : แสดงสมรรถนะระดับที่ 1 และสามารถทำงานได้ผลงานตามเป้าหมายที่วางไว้</h6>
@@ -154,37 +216,174 @@
                         <div class="col-md-1">
                             <p>1.6</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             กำหนดมาตรฐาน หรือเป้าหมายในการทำงานเพื่อให้ได้ผลงานที่ดี
                         </div>
-
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="inputGroupSelect01">คะแนน</label>
+                                <select class="form-select" id="inputGroupSelect01">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="col-md-1">
                             <p>1.7</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             ติดตาม และประเมินผลงานของตน โดยเทียบเคียงกับเกณฑ์มาตรฐาน
                         </div>
-
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="inputGroupSelect01">คะแนน</label>
+                                <select class="form-select" id="inputGroupSelect01">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="col-md-1">
                             <p>1.8</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             ทำงานได้ตามเป้าหมายที่ผู้บังคับบัญชากำหนด หรือเป้าหมายของหน่วยงานที่รับผิดชอบ
                         </div>
-
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="inputGroupSelect01">คะแนน</label>
+                                <select class="form-select" id="inputGroupSelect01">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="col-md-1">
                             <p>1.9</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             มีความละเอียดรอบคอบ เอาใจใส่ ตรวจตราความถูกต้อง เพื่อให้ได้งานที่มีคุณภาพ
                         </div>
-
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="inputGroupSelect01">คะแนน</label>
+                                <select class="form-select" id="inputGroupSelect01">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
 
 
 
 
 
                     </div>
+                    @elseif ( $level == 3)
+                    {{-- ระดับที่ 2 --}}
+                    <div class="row">
+                        <div class="col-12">
+                            <h6>ระดับที่ 2 : แสดงสมรรถนะระดับที่ 1 และสามารถทำงานได้ผลงานตามเป้าหมายที่วางไว้</h6>
+                        </div>
+                        <div class="col-md-1">
+                            <p>1.6</p>
+                        </div>
+                        <div class="col-md-9">
+                            กำหนดมาตรฐาน หรือเป้าหมายในการทำงานเพื่อให้ได้ผลงานที่ดี
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="inputGroupSelect01">คะแนน</label>
+                                <select class="form-select" id="inputGroupSelect01" name="score16">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <p>1.7</p>
+                        </div>
+                        <div class="col-md-9">
+                            ติดตาม และประเมินผลงานของตน โดยเทียบเคียงกับเกณฑ์มาตรฐาน
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="inputGroupSelect01">คะแนน</label>
+                                <select class="form-select" id="inputGroupSelect01">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <p>1.8</p>
+                        </div>
+                        <div class="col-md-9">
+                            ทำงานได้ตามเป้าหมายที่ผู้บังคับบัญชากำหนด หรือเป้าหมายของหน่วยงานที่รับผิดชอบ
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="inputGroupSelect01">คะแนน</label>
+                                <select class="form-select" id="inputGroupSelect01">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <p>1.9</p>
+                        </div>
+                        <div class="col-md-9">
+                            มีความละเอียดรอบคอบ เอาใจใส่ ตรวจตราความถูกต้อง เพื่อให้ได้งานที่มีคุณภาพ
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="inputGroupSelect01">คะแนน</label>
+                                <select class="form-select" id="inputGroupSelect01">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+
                     {{-- ระดับที่ 3 --}}
                     <div class="row">
                         <div class="col-12">
@@ -193,20 +392,50 @@
                         <div class="col-md-1">
                             <p>1.9</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             ปรับปรุงวิธีการที่ทำให้ทำงานได้ดีขึ้น เร็วขึ้น มีคุณภาพดีขึ้น มีประสิทธิภาพมากขึ้น หรือทำให้ผู้รับบริการพึงพอใจมากขึ้น
                         </div>
-
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="inputGroupSelect01">คะแนน</label>
+                                <select class="form-select" id="inputGroupSelect01">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="col-md-1">
                             <p>1.10</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             เสนอหรือทดลองวิธีการทำงานแบบใหม่ที่คาดว่าจะทำให้งานมีประสิทธิภาพมากขึ้น
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="inputGroupSelect01">คะแนน</label>
+                                <select class="form-select" id="inputGroupSelect01">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
 
 
-
                     </div>
+
+
+
+                    @endif
+
+
                 </div>
 
 
@@ -533,10 +762,24 @@
                             <h6>ระดับที่ 1 : ทำหน้าที่ของตนในทีมให้สำเร็จ</h6>
                         </div>
                         <div class="col-md-1">
-                            <p>1.2</p>
+                            <p>5.1</p>
                         </div>
                         <div class="col-md-11">
-                            พยายามปฏิบัติงานให้แล้วเสร็จตามกำหนดเวลา
+                            <p>สนับสนุนการตัดสินใจของทีม และทำงานในส่วนที่ตนได้รับมอบหมาย</p>
+                        </div>
+
+                        <div class="col-md-1">
+                            <p>5.2</p>
+                        </div>
+                        <div class="col-md-11">
+                            <p>รายงานให้สมาชิกทราบความคืบหน้าของการดำเนินงานของตนในทีม</p>
+                        </div>
+
+                        <div class="col-md-1">
+                            <p>5.3</p>
+                        </div>
+                        <div class="col-md-11">
+                            <p>ให้ข้อมูล ที่เป็นประโยชน์ต่อการทำงานของทีม</p>
                         </div>
                     </div>
 
@@ -547,10 +790,22 @@
                             <h6>ระดับที่ 2 : แสดงสมรรถนะระดับที่ 1 และให้ความร่วมมือในการทำงานกับเพื่อนร่วมงาน</h6>
                         </div>
                         <div class="col-md-1">
-                            <p>1.6</p>
+                            <p>5.4</p>
                         </div>
                         <div class="col-md-11">
-                            กำหนดมาตรฐาน หรือเป้าหมายในการทำงานเพื่อให้ได้ผลงานที่ดี
+                            <p>สร้างสัมพันธ์  เข้ากับผู้อื่นในกลุ่มได้ดี</p>
+                        </div>
+                        <div class="col-md-1">
+                            <p>5.5</p>
+                        </div>
+                        <div class="col-md-11">
+                            <p>ให้ความร่วมมือกับผู้อื่นในทีมด้วยดี</p>
+                        </div>
+                        <div class="col-md-1">
+                            <p>5.6</p>
+                        </div>
+                        <div class="col-md-11">
+                            <p>กล่าวถึงเพื่อนร่วมงานในเชิงสร้างสรรค์ และแสดงความเชื่อมั่นในศักยภาพของเพื่อนร่วมทีม ทั้งต่อหน้าและลับหลัง</p>
                         </div>
 
                     </div>
@@ -560,10 +815,22 @@
                             <h6>ระดับที่ 3 : แสดงสมรรถนะระดับที่ 2 และประสานความร่วมมือของสมาชิกในทีม</h6>
                         </div>
                         <div class="col-md-1">
-                            <p>1.9</p>
+                            <p>5.7</p>
                         </div>
                         <div class="col-md-11">
-                            ปรับปรุงวิธีการที่ทำให้ทำงานได้ดีขึ้น เร็วขึ้น มีคุณภาพดีขึ้น มีประสิทธิภาพมากขึ้น หรือทำให้ผู้รับบริการพึงพอใจมากขึ้น
+                            <p>รับฟังความเห็นของสมาชิกในทีม และเต็มใจเรียนรู้จากผู้อื่น</p>
+                        </div>
+                        <div class="col-md-1">
+                            <p>5.8</p>
+                        </div>
+                        <div class="col-md-11">
+                            <p>ตัดสินใจหรือวางแผนงานร่วมกันในทีมจากความคิดเห็นของเพื่อนร่วมทีม</p>
+                        </div>
+                        <div class="col-md-1">
+                            <p>5.9</p>
+                        </div>
+                        <div class="col-md-11">
+                            <p>ประสานและส่งเสริมสัมพันธภาพอันดีในทีม เพื่อสนับสนุนการทำงานร่วมกันให้มีประสิทธิภาพยิ่งขึ้น</p>
                         </div>
 
 
@@ -586,55 +853,76 @@
                     <div class="row">
 
                         <div class="col-12">
-                            <h5>สมรรถนะที่ 2 บริการที่ดี (Service Mind-SERV) น้ำหนัก 15%</h5>
+                            <h5>สมรรถนะที่ 6 ความเข้าใจข้อแตกต่างทางวัฒนธรรม (Cultural Sensitivity) น้ำหนัก 25%</h5>
                             <hr>
                         </div>
 
                         <div class="col-12">
-                            <p>คำอธิบาย : ความตั้งใจและความพยายามของข้าราชการในการให้บริการต่อประชาชน ข้าราชการ หรือหน่วยงานอื่นๆ ที่เกี่ยวข้อง</p>
+                            <p>คำอธิบาย : การรับรู้ถึงข้อแตกต่างทางวัฒนธรรม และสามารถประยุกต์ความเข้าใจ เพื่อสร้างสัมพันธภาพระหว่างกันได้</p>
                         </div>
                     </div>
                     <div class="row">
 
                         {{--------------------------------------- ระดับที่ 1 -----------------------------------}}
                         <div class="col-12">
-                            <h6>ระดับที่ 1 : สามารถให้บริการที่ผู้รับบริการต้องการได้ด้วยความเต็มใจ</h6>
+                            <h6>ระดับที่ 1 : เห็นคุณค่าของวัฒนธรรมไทยและให้ความสนใจวัฒนธรรมของผู้อื่น</h6>
                         </div>
                         <div class="col-md-1">
-                            <p>1.2</p>
+                            <p>6.1</p>
                         </div>
                         <div class="col-md-11">
-                            พยายามปฏิบัติงานให้แล้วเสร็จตามกำหนดเวลา
+                            <p>ภาคภูมิใจในวัฒนธรรมของไทย ขณะที่เห็นคุณค่าและสนใจที่จะเรียนรู้วัฒนธรรมของผู้อื่น</p>
                         </div>
-                    </div>
+                        <div class="col-md-1">
+                            <p>6.2</p>
+                        </div>
+                        <div class="col-md-11">
+                            <p>ยอมรับความแตกต่างทางวัฒนธรรม และไม่ดูถูกวัฒนธรรมอื่นว่าด้อยกว่า</p>
+                        </div>
 
                         {{------------------------- ระดับที่ 2 -----------------------------------}}
 
                     <div class="row">
                         <div class="col-12">
-                            <h6>ระดับที่ 2 : แสดงสมรรถนะระดับที่  1 และช่วยแก้ปัญหาให้แก่ผู้รับบริการ</h6>
+                            <h6>ระดับที่ 2 : แสดงสมรรถนะระดับที่ 1 และเข้าใจ รวมทั้งปรับตัวให้สอดคล้องกับวัฒนธรรมใหม่</h6>
                         </div>
                         <div class="col-md-1">
-                            <p>1.6</p>
+                            <p>6.3</p>
                         </div>
                         <div class="col-md-11">
-                            กำหนดมาตรฐาน หรือเป้าหมายในการทำงานเพื่อให้ได้ผลงานที่ดี
+                            <p>เข้าใจมารยาท กาลเทศะ ตลอดจนธรรมเนียมปฏิบัติของวัฒนธรรมที่แตกต่าง และพยายามปรับตัวให้สอดคล้อง</p>
+                        </div>
+                        <div class="col-md-1">
+                            <p>6.4</p>
+                        </div>
+                        <div class="col-md-11">
+                            <p>สื่อสารด้วยวิธีการ เนื้อหา และถ้อยคำที่เหมาะสมกับวัฒนธรรมของผู้อื่น</p>
                         </div>
 
                     </div>
                     {{--------------------------------------- ระดับที่ 3 --------------------------------}}
                     <div class="row">
                         <div class="col-12">
-                            <h6>ระดับที่ 3 : แสดงสมรรถนะระดับที่ 2 และให้บริการที่เกินความคาดหวัง แม้ต้องใช้เวลาหรือความพยายามอย่างมาก</h6>
+                            <h6>ระดับที่ 3 : แสดงสมรรถนะระดับที่ 2 และเข้าใจในวัฒนธรรมต่าง ๆ อย่างลึกซึ้ง รวมทั้งแสดงออกได้อย่างเหมาะสมกับสถานการณ์</h6>
                         </div>
                         <div class="col-md-1">
-                            <p>1.9</p>
+                            <p>6.5</p>
                         </div>
                         <div class="col-md-11">
-                            ปรับปรุงวิธีการที่ทำให้ทำงานได้ดีขึ้น เร็วขึ้น มีคุณภาพดีขึ้น มีประสิทธิภาพมากขึ้น หรือทำให้ผู้รับบริการพึงพอใจมากขึ้น
+                            <p>เข้าใจบริบท และนัยสำคัญของวัฒนธรรมต่าง ๆ</p>
                         </div>
-
-
+                        <div class="col-md-1">
+                            <p>6.6</p>
+                        </div>
+                        <div class="col-md-11">
+                            <p>เข้าใจรากฐานทางวัฒนธรรมที่แตกต่างอันจะทำให้เข้าใจวิธีคิดของผู้อื่น</p>
+                        </div>
+                        <div class="col-md-1">
+                            <p>6.7</p>
+                        </div>
+                        <div class="col-md-11">
+                            <p>ไม่ตัดสินผู้อื่นจากความแตกต่างทางวัฒนธรรม แต่ต้องพยายามทำความเข้าใจ เพื่อให้สามารถทำงานร่วมกันได้</p>
+                        </div>
                     </div>
                 </div>
 
@@ -645,9 +933,57 @@
         {{------------------------------------------------ end สมรรถนะที่ 6-----------------------------}}
 
 
+        <section class="section">
+            <div class="row">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <table class="table table">
+                                <thead>
+                                    <tr>
+                                        <th>สมรรถนะ 1</th>
+                                        <th>สมรรถนะ 2</th>
+                                        <th>สมรรถนะ 3</th>
+                                        <th>สมรรถนะ 4</th>
+                                        <th>สมรรถนะ 5</th>
+                                        <th>สมรรถนะ 6</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>22</td>
+                                        <td>22</td>
+                                        <td>22</td>
+                                        <td>22</td>
+                                        <td>22</td>
+                                        <td>22</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                            <button type="button" class="btn btn-outline-success">คำนวณ</button>
+                            <button type="submit" value="submit" class="btn btn-outline-primary">บันทึก</button>
 
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        {{-- <section class="section">
+            <div class="card">
+                <div class="card-body">
+                    <form action="{{route('answer')}}" method="post">
+                        @csrf
+                  <input type="text" name="score" value="ddd" id="">
+                    <button type="submit">save</button>
+                    </form>
+                </div>
+            </div>
+        </section> --}}
+
+    </form>
 
     </div>
 
@@ -662,15 +998,5 @@
 
 
 
-    <footer>
-        <div class="footer clearfix mb-0 text-muted">
-            <div class="float-start">
-                <p>2021 &copy; Mazer</p>
-            </div>
-            <div class="float-end">
-                <p>Crafted with <span class="text-danger"><i class="bi bi-heart-fill icon-mid"></i></span>
-                    by <a href="https://ahmadsaugi.com">Saugi</a></p>
-            </div>
-        </div>
-    </footer>
+
 @endsection

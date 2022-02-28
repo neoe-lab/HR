@@ -81,7 +81,7 @@
                     </a>
                     <ul class="submenu ">
                         <li class="submenu-item ">
-                            <a href="{{ route('performance')}}">ประเมินสมรรถนะ</a>
+                            <a href="{{ route('list-person-performance')}}">ประเมินสมรรถนะ</a>
                         </li>
                         <li class="submenu-item ">
                             <a href="#">ประเมินสัมพันธภาพ</a>
