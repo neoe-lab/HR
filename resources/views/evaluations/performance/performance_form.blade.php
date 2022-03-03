@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
                     <h3>ฟอร์มการประเมิน</h3>
-                    <p class="text-subtitle text-muted">Navbar will appear in top of the page.</p>
+                    {{-- <p class="text-subtitle text-muted">Navbar will appear in top of the page.</p> --}}
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
@@ -21,13 +21,18 @@
         </div>
 
         @php
-        $level = 3;
+        $level = 1;
         @endphp
         <form action=" {{ route('answer')}}" method="post">
         @csrf
+
+        {{-- ระบุว่าใครเป็นคนประเมินเมื่อไร --}}
         <input type="hidden" name="who" value="002">
         <input type="hidden" name="me" value="006">
-        <input type="hidden" name="yesr" value="036">
+        <input type="hidden" name="time" value="036">
+        <input type="hidden" name="type" value="01">
+
+
         <section class="section">
             <div class="card">
                 <div class="card-header">
@@ -104,7 +109,9 @@
                         </div>
                         <div class="col-md-1">
                             <p>1.1</p>
-                            <input type="hidden" name="num11" value="11">
+                            <input type="hidden" name="num[]" value="11">
+
+
                         </div>
                         <div class="col-md-9">
                             พยายามทำงานในหน้าที่ให้ถูกต้อง
@@ -113,7 +120,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -126,6 +133,8 @@
 
                         <div class="col-md-1">
                             <p>1.2</p>
+                            <input type="hidden" name="num[]" value="12">
+
                         </div>
                         <div class="col-md-9">
                             พยายามปฏิบัติงานให้แล้วเสร็จตามกำหนดเวลา
@@ -133,7 +142,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score12">
+                                <select class="form-select" name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -146,6 +155,8 @@
 
                         <div class="col-md-1">
                             <p>1.3</p>
+                            <input type="hidden" name="num[]" value="13">
+
                         </div>
                         <div class="col-md-9">
                             มานะ อดทน ขยันหมั่นเพียรในการทำงาน
@@ -153,7 +164,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="inputGroupSelect01">คะแนน</label>
-                                <select class="form-select" id="inputGroupSelect01">
+                                <select class="form-select"  name="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -166,6 +177,8 @@
 
                         <div class="col-md-1">
                             <p>1.4</p>
+                            <input type="hidden" name="num[]" value="14">
+
                         </div>
                         <div class="col-md-9">
                             แสดงออกว่าต้องการทำงานให้ดีขึ้น
@@ -173,7 +186,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="inputGroupSelect01">คะแนน</label>
-                                <select class="form-select" id="inputGroupSelect01">
+                                <select class="form-select"  name="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -186,6 +199,8 @@
 
                         <div class="col-md-1">
                             <p>1.5</p>
+                            <input type="hidden" name="num[]" value="15">
+
                         </div>
                         <div class="col-md-9">
                             แสดงความคิดเห็นเชิงปรับปรุงพัฒนาเมื่อเห็นสิ่งที่ก่อให้เกิดการสูญเปล่าหรือหย่อนประสิทธิภาพในงาน
@@ -193,7 +208,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="inputGroupSelect01">คะแนน</label>
-                                <select class="form-select" id="inputGroupSelect01">
+                                <select class="form-select"  name="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -215,6 +230,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>1.6</p>
+                            <input type="hidden" name="num[]" value="16">
+
                         </div>
                         <div class="col-md-9">
                             กำหนดมาตรฐาน หรือเป้าหมายในการทำงานเพื่อให้ได้ผลงานที่ดี
@@ -222,7 +239,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="inputGroupSelect01">คะแนน</label>
-                                <select class="form-select" id="inputGroupSelect01">
+                                <select class="form-select"  name="score[]>
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -234,6 +251,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>1.7</p>
+                            <input type="hidden" name="num[]" value="17">
+
                         </div>
                         <div class="col-md-9">
                             ติดตาม และประเมินผลงานของตน โดยเทียบเคียงกับเกณฑ์มาตรฐาน
@@ -241,7 +260,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="inputGroupSelect01">คะแนน</label>
-                                <select class="form-select" id="inputGroupSelect01">
+                                <select class="form-select"  name="score[]>
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -253,6 +272,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>1.8</p>
+                            <input type="hidden" name="num[]" value="18">
+
                         </div>
                         <div class="col-md-9">
                             ทำงานได้ตามเป้าหมายที่ผู้บังคับบัญชากำหนด หรือเป้าหมายของหน่วยงานที่รับผิดชอบ
@@ -260,7 +281,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="inputGroupSelect01">คะแนน</label>
-                                <select class="form-select" id="inputGroupSelect01">
+                                <select class="form-select"  name="score[]>
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -272,6 +293,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>1.9</p>
+                            <input type="hidden" name="num[]" value="19">
+
                         </div>
                         <div class="col-md-9">
                             มีความละเอียดรอบคอบ เอาใจใส่ ตรวจตราความถูกต้อง เพื่อให้ได้งานที่มีคุณภาพ
@@ -279,7 +302,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="inputGroupSelect01">คะแนน</label>
-                                <select class="form-select" id="inputGroupSelect01">
+                                <select class="form-select"  name="score[]>
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -303,6 +326,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>1.6</p>
+                            <input type="hidden" name="num[]" value="16">
+
                         </div>
                         <div class="col-md-9">
                             กำหนดมาตรฐาน หรือเป้าหมายในการทำงานเพื่อให้ได้ผลงานที่ดี
@@ -310,7 +335,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="inputGroupSelect01">คะแนน</label>
-                                <select class="form-select" id="inputGroupSelect01" name="score16">
+                                <select class="form-select"  name="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -322,6 +347,7 @@
                         </div>
                         <div class="col-md-1">
                             <p>1.7</p>
+                            <input type="hidden" name="num[]" value="17">
                         </div>
                         <div class="col-md-9">
                             ติดตาม และประเมินผลงานของตน โดยเทียบเคียงกับเกณฑ์มาตรฐาน
@@ -329,7 +355,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="inputGroupSelect01">คะแนน</label>
-                                <select class="form-select" id="inputGroupSelect01">
+                                <select class="form-select"  name="score[]>
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -341,6 +367,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>1.8</p>
+                            <input type="hidden" name="num[]" value="18">
+
                         </div>
                         <div class="col-md-9">
                             ทำงานได้ตามเป้าหมายที่ผู้บังคับบัญชากำหนด หรือเป้าหมายของหน่วยงานที่รับผิดชอบ
@@ -348,7 +376,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="inputGroupSelect01">คะแนน</label>
-                                <select class="form-select" id="inputGroupSelect01">
+                                <select class="form-select"  name="score[]>
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -360,6 +388,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>1.9</p>
+                            <input type="hidden" name="num[]" value="19">
+
                         </div>
                         <div class="col-md-9">
                             มีความละเอียดรอบคอบ เอาใจใส่ ตรวจตราความถูกต้อง เพื่อให้ได้งานที่มีคุณภาพ
@@ -367,7 +397,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="inputGroupSelect01">คะแนน</label>
-                                <select class="form-select" id="inputGroupSelect01">
+                                <select class="form-select"  name="score[]>
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -391,6 +421,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>1.9</p>
+                            <input type="hidden" name="num[]" value="19">
+
                         </div>
                         <div class="col-md-9">
                             ปรับปรุงวิธีการที่ทำให้ทำงานได้ดีขึ้น เร็วขึ้น มีคุณภาพดีขึ้น มีประสิทธิภาพมากขึ้น หรือทำให้ผู้รับบริการพึงพอใจมากขึ้น
@@ -398,7 +430,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="inputGroupSelect01">คะแนน</label>
-                                <select class="form-select" id="inputGroupSelect01">
+                                <select class="form-select"  name="score[]>
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -410,6 +442,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>1.10</p>
+                            <input type="hidden" name="num[]" value="110">
+
                         </div>
                         <div class="col-md-9">
                             เสนอหรือทดลองวิธีการทำงานแบบใหม่ที่คาดว่าจะทำให้งานมีประสิทธิภาพมากขึ้น
@@ -417,7 +451,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="inputGroupSelect01">คะแนน</label>
-                                <select class="form-select" id="inputGroupSelect01">
+                                <select class="form-select"  name="score[]>
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -471,6 +505,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>2.1</p>
+                            <input type="hidden" name="num[]" value="21">
+
                         </div>
                         <div class="col-md-9">
                             ให้การบริการที่เป็นมิตร สุภาพ
@@ -479,7 +515,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -493,6 +529,8 @@
 
                         <div class="col-md-1">
                             <p>2.2</p>
+                            <input type="hidden" name="num[]" value="22">
+
                         </div>
                         <div class="col-md-9">
                             ให้ข้อมูล ข่าวสาร ที่ถูกต้อง ชัดเจนแก่ผู้รับบริการ
@@ -503,7 +541,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -515,6 +553,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>2.3</p>
+                            <input type="hidden" name="num[]" value="23">
+
                         </div>
                         <div class="col-md-9">
                             แจ้งให้ผู้รับบริการทราบความคืบหน้าในการดำเนินเรื่อง หรือขั้นตอนงานต่างๆ ที่ให้บริการอยู่
@@ -523,7 +563,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -536,6 +576,8 @@
 
                         <div class="col-md-1">
                             <p>2.4</p>
+                            <input type="hidden" name="num[]" value="24">
+
                         </div>
                         <div class="col-md-9">
                             ประสานงานภายในหน่วยงานและหน่วยงานที่เกี่ยวข้อง เพื่อให้ผู้รับบริการได้รับบริการที่ต่อเนื่องและรวดเร็ว
@@ -544,7 +586,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -567,6 +609,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>2.5</p>
+                            <input type="hidden" name="num[]" value="25">
+
                         </div>
                         <div class="col-md-9">
                             รับเป็นธุระ ช่วยแก้ปัญหาหรือหาแนวทางแก้ไขปัญหาที่เกิดขึ้นแก่ผู้รับบริการอย่างรวดเร็ว  ไม่บ่ายเบี่ยง ไม่แก้ตัว หรือปัดภาระ
@@ -575,7 +619,7 @@
                          <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -588,6 +632,8 @@
 
                         <div class="col-md-1">
                             <p>2.6</p>
+                            <input type="hidden" name="num[]" value="26">
+
                         </div>
                         <div class="col-md-9">
                             ดูแลให้ผู้รับบริการได้รับความพึงพอใจ และนำข้อขัดข้องใดๆ ในการให้บริการไปพัฒนาการให้บริการให้ดียิ่งขึ้น
@@ -595,7 +641,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -614,6 +660,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>2.7</p>
+                            <input type="hidden" name="num[]" value="27">
+
                         </div>
                         <div class="col-md-9">
                             ให้เวลาแก่ผู้รับบริการเป็นพิเศษ เพื่อช่วยแก้ปัญหาให้แก่ผู้รับบริการ
@@ -622,7 +670,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -634,6 +682,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>2.8</p>
+                            <input type="hidden" name="num[]" value="28">
+
                         </div>
                         <div class="col-md-9">
                             ให้ข้อมูล ข่าวสาร ที่เกี่ยวข้องกับงานที่กำลังให้บริการอยู่ ซึ่งเป็นประโยชน์แก่ผู้รับบริการ แม้ว่าผู้รับบริการจะไม่ได้ถามถึง หรือไม่ทราบมาก่อน
@@ -641,7 +691,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -653,6 +703,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>2.9</p>
+                            <input type="hidden" name="num[]" value="29">
+
                         </div>
                         <div class="col-md-9">
                             นำเสนอวิธีการในการให้บริการที่ผู้รับบริการจะได้รับประโยชน์สูงสุด
@@ -660,7 +712,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -706,6 +758,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>3.1</p>
+                            <input type="hidden" name="num[]" value="31">
+
                         </div>
                         <div class="col-md-9">
                             ศึกษาหาความรู้ สนใจเทคโนโลยีและองค์ความรู้ใหม่ๆ ในสาขาอาชีพของตน
@@ -713,7 +767,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -725,6 +779,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>3.2</p>
+                            <input type="hidden" name="num[]" value="32">
+
                         </div>
                         <div class="col-md-9">
                             พัฒนาความรู้ความสามารถของตนให้ดียิ่งขึ้น
@@ -732,7 +788,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -744,6 +800,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>3.3</p>
+                            <input type="hidden" name="num[]" value="33">
+
                         </div>
                         <div class="col-md-9">
                             ติดตามเทคโนโลยีและความรู้ใหม่ๆ อยู่เสมอ ด้วยการสืบค้นข้อมูลจากแหล่งต่างๆ ที่จะเป็นประโยชน์ต่อการปฏิบัติราชการ
@@ -752,7 +810,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -772,6 +830,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>3.4</p>
+                            <input type="hidden" name="num[]" value="34">
+
                         </div>
                         <div class="col-md-9">
                             รอบรู้ในเทคโนโลยีหรือองค์ความรู้ใหม่ๆ ในสาขาอาชีพของตน หรือที่เกี่ยวข้อง ซึ่งอาจมีผลกระทบต่อการปฏิบัติหน้าที่ราชการของตน
@@ -779,7 +839,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -791,6 +851,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>3.5</p>
+                            <input type="hidden" name="num[]" value="35">
+
                         </div>
                         <div class="col-md-9">
                             รับรู้ถึงแนวโน้มวิทยาการที่ทันสมัย และเกี่ยวข้องกับงานตน อย่างต่อเนื่อง
@@ -798,7 +860,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -817,6 +879,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>3.6</p>
+                            <input type="hidden" name="num[]" value="36">
+
                         </div>
                         <div class="col-md-9">
                             สามารถนำวิชาการ ความรู้ หรือเทคโนโลยีใหม่ๆ มาประยุกต์ใช้ในการปฏิบัติหน้าที่ราชการได้
@@ -825,7 +889,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -837,6 +901,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>3.7</p>
+                            <input type="hidden" name="num[]" value="37">
+
                         </div>
                         <div class="col-md-9">
                             สามารถแก้ปัญหาที่อาจเกิดจากการนำเทคโนโลยีใหม่มาใช้ในการปฏิบัติหน้าที่ราชการได้
@@ -844,7 +910,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -891,6 +957,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>4.1</p>
+                            <input type="hidden" name="num[]" value="41">
+
                         </div>
                         <div class="col-md-9">
                             ปฏิบัติหน้าที่ด้วยความสุจริต ไม่เลือกปฏิบัติ ถูกต้องตามหลักกฎหมาย และวินัยข้าราชการ
@@ -898,7 +966,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -910,6 +978,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>4.2</p>
+                            <input type="hidden" name="num[]" value="42">
+
                         </div>
                         <div class="col-md-9">
                             แสดงความคิดเห็นตามหลักวิชาชีพอย่างสุจริต
@@ -917,7 +987,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -937,6 +1007,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>4.3</p>
+                            <input type="hidden" name="num[]" value="43">
+
                         </div>
                         <div class="col-md-9">
                             รักษาคำพูด มีสัจจะ และเชื่อถือได้
@@ -944,7 +1016,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -957,6 +1029,8 @@
 
                         <div class="col-md-1">
                             <p>4.4</p>
+                            <input type="hidden" name="num[]" value="44">
+
                         </div>
                         <div class="col-md-9">
                             แสดงให้ปรากฏถึงความมีจิตสำนึกในความเป็นข้าราชการ
@@ -964,7 +1038,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -983,6 +1057,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>4.5</p>
+                            <input type="hidden" name="num[]" value="45">
+
                         </div>
                         <div class="col-md-9">
                             ยึดมั่นในหลักการ จรรยาบรรณแห่งวิชาชีพ และจรรยาข้าราชการ ไม่เบี่ยงเบนด้วยอคติหรือผลประโยชน์ กล้ารับผิด และรับผิดชอบ
@@ -990,7 +1066,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -1002,6 +1078,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>4.6</p>
+                            <input type="hidden" name="num[]" value="46">
+
                         </div>
                         <div class="col-md-9">
                             เสียสละความสุขส่วนตน เพื่อให้เกิดประโยชน์แก่ทางราชการ
@@ -1009,7 +1087,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -1056,6 +1134,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>5.1</p>
+                            <input type="hidden" name="num[]" value="51">
+
                         </div>
                         <div class="col-md-9">
                             <p>สนับสนุนการตัดสินใจของทีม และทำงานในส่วนที่ตนได้รับมอบหมาย</p>
@@ -1063,7 +1143,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -1076,6 +1156,8 @@
 
                         <div class="col-md-1">
                             <p>5.2</p>
+                            <input type="hidden" name="num[]" value="52">
+
                         </div>
                         <div class="col-md-9">
                             <p>รายงานให้สมาชิกทราบความคืบหน้าของการดำเนินงานของตนในทีม</p>
@@ -1083,7 +1165,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -1096,6 +1178,8 @@
 
                         <div class="col-md-1">
                             <p>5.3</p>
+                            <input type="hidden" name="num[]" value="53">
+
                         </div>
                         <div class="col-md-9">
                             <p>ให้ข้อมูล ที่เป็นประโยชน์ต่อการทำงานของทีม</p>
@@ -1103,7 +1187,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -1123,6 +1207,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>5.4</p>
+                            <input type="hidden" name="num[]" value="54">
+
                         </div>
                         <div class="col-md-9">
                             <p>สร้างสัมพันธ์  เข้ากับผู้อื่นในกลุ่มได้ดี</p>
@@ -1130,7 +1216,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -1142,6 +1228,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>5.5</p>
+                            <input type="hidden" name="num[]" value="55">
+
                         </div>
                         <div class="col-md-9">
                             <p>ให้ความร่วมมือกับผู้อื่นในทีมด้วยดี</p>
@@ -1149,7 +1237,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -1161,6 +1249,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>5.6</p>
+                            <input type="hidden" name="num[]" value="56">
+
                         </div>
                         <div class="col-md-9">
                             <p>กล่าวถึงเพื่อนร่วมงานในเชิงสร้างสรรค์ และแสดงความเชื่อมั่นในศักยภาพของเพื่อนร่วมทีม ทั้งต่อหน้าและลับหลัง</p>
@@ -1168,7 +1258,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -1187,6 +1277,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>5.7</p>
+                            <input type="hidden" name="num[]" value="57">
+
                         </div>
                         <div class="col-md-9">
                             <p>รับฟังความเห็นของสมาชิกในทีม และเต็มใจเรียนรู้จากผู้อื่น</p>
@@ -1194,7 +1286,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -1206,6 +1298,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>5.8</p>
+                            <input type="hidden" name="num[]" value="58">
+
                         </div>
                         <div class="col-md-9">
                             <p>ตัดสินใจหรือวางแผนงานร่วมกันในทีมจากความคิดเห็นของเพื่อนร่วมทีม</p>
@@ -1213,7 +1307,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -1225,6 +1319,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>5.9</p>
+                            <input type="hidden" name="num[]" value="59">
+
                         </div>
                         <div class="col-md-9">
                             <p>ประสานและส่งเสริมสัมพันธภาพอันดีในทีม เพื่อสนับสนุนการทำงานร่วมกันให้มีประสิทธิภาพยิ่งขึ้น</p>
@@ -1232,7 +1328,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -1279,6 +1375,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>6.1</p>
+                            <input type="hidden" name="num[]" value="61">
+
                         </div>
                         <div class="col-md-9">
                             <p>ภาคภูมิใจในวัฒนธรรมของไทย ขณะที่เห็นคุณค่าและสนใจที่จะเรียนรู้วัฒนธรรมของผู้อื่น</p>
@@ -1286,7 +1384,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -1298,6 +1396,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>6.2</p>
+                            <input type="hidden" name="num[]" value="62">
+
                         </div>
                         <div class="col-md-9">
                             <p>ยอมรับความแตกต่างทางวัฒนธรรม และไม่ดูถูกวัฒนธรรมอื่นว่าด้อยกว่า</p>
@@ -1305,7 +1405,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -1324,6 +1424,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>6.3</p>
+                            <input type="hidden" name="num[]" value="63">
+
                         </div>
                         <div class="col-md-9">
                             <p>เข้าใจมารยาท กาลเทศะ ตลอดจนธรรมเนียมปฏิบัติของวัฒนธรรมที่แตกต่าง และพยายามปรับตัวให้สอดคล้อง</p>
@@ -1331,7 +1433,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -1343,6 +1445,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>6.4</p>
+                            <input type="hidden" name="num[]" value="64">
+
                         </div>
                         <div class="col-md-9">
                             <p>สื่อสารด้วยวิธีการ เนื้อหา และถ้อยคำที่เหมาะสมกับวัฒนธรรมของผู้อื่น</p>
@@ -1351,7 +1455,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -1369,6 +1473,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>6.5</p>
+                            <input type="hidden" name="num[]" value="65">
+
                         </div>
                         <div class="col-md-9">
                             <p>เข้าใจบริบท และนัยสำคัญของวัฒนธรรมต่าง ๆ</p>
@@ -1376,7 +1482,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -1388,6 +1494,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>6.6</p>
+                            <input type="hidden" name="num[]" value="66">
+
                         </div>
                         <div class="col-md-9">
                             <p>เข้าใจรากฐานทางวัฒนธรรมที่แตกต่างอันจะทำให้เข้าใจวิธีคิดของผู้อื่น</p>
@@ -1395,7 +1503,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -1407,6 +1515,8 @@
                         </div>
                         <div class="col-md-1">
                             <p>6.7</p>
+                            <input type="hidden" name="num[]" value="67">
+
                         </div>
                         <div class="col-md-9">
                             <p>ไม่ตัดสินผู้อื่นจากความแตกต่างทางวัฒนธรรม แต่ต้องพยายามทำความเข้าใจ เพื่อให้สามารถทำงานร่วมกันได้</p>
@@ -1414,7 +1524,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select"  name ="score11">
+                                <select class="form-select"  name ="score[]">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -1433,7 +1543,7 @@
         </section>
         {{------------------------------------------------ end สมรรถนะที่ 6-----------------------------}}
 
-
+        {{--------------------------- สรุปผลคะแนน ก่อนบันทึก ------------------------------------  --}}
         <section class="section">
             <div class="row">
                 <div class="card">
