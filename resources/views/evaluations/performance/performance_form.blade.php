@@ -21,7 +21,7 @@
         </div>
 
         @php
-        $level = 1;
+        $level = 3;
         @endphp
         <form action=" {{ route('answer')}}" method="post">
         @csrf
@@ -113,7 +113,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select" id="scoreselecter" name ="score11">
+                                <select class="form-select"  name ="score11">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -133,7 +133,7 @@
                         <div class="col-md-2">
                             <div class="input-group input-group-sm mb-2">
                                 <label class="input-group-text" for="score">คะแนน</label>
-                                <select class="form-select" id="scoreselecter" name ="score12">
+                                <select class="form-select"  name ="score12">
                                     <option selected="">เลือก</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -472,32 +472,88 @@
                         <div class="col-md-1">
                             <p>2.1</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             ให้การบริการที่เป็นมิตร สุภาพ
                         </div>
+
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
+
 
                         <div class="col-md-1">
                             <p>2.2</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             ให้ข้อมูล ข่าวสาร ที่ถูกต้อง ชัดเจนแก่ผู้รับบริการ
                         </div>
 
+
+
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="col-md-1">
                             <p>2.3</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             แจ้งให้ผู้รับบริการทราบความคืบหน้าในการดำเนินเรื่อง หรือขั้นตอนงานต่างๆ ที่ให้บริการอยู่
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="col-md-1">
                             <p>2.4</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             ประสานงานภายในหน่วยงานและหน่วยงานที่เกี่ยวข้อง เพื่อให้ผู้รับบริการได้รับบริการที่ต่อเนื่องและรวดเร็ว
                         </div>
 
-
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
 
 
 
@@ -512,13 +568,42 @@
                         <div class="col-md-1">
                             <p>2.5</p>
                         </div>
-                        <div class="col-md-11">
-                            รับเป็นธุระ ช่วยแก้ปัญหาหรือหาแนวทางแก้ไขปัญหาที่เกิดขึ้นแก่ผู้รับบริการอย่างรวดเร็ว  ไม่บ่ายเบี่ยง ไม่แก้ตัว หรือปัดภาระ                        </div>
+                        <div class="col-md-9">
+                            รับเป็นธุระ ช่วยแก้ปัญหาหรือหาแนวทางแก้ไขปัญหาที่เกิดขึ้นแก่ผู้รับบริการอย่างรวดเร็ว  ไม่บ่ายเบี่ยง ไม่แก้ตัว หรือปัดภาระ
+                         </div>
+
+                         <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="col-md-1">
                             <p>2.6</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             ดูแลให้ผู้รับบริการได้รับความพึงพอใจ และนำข้อขัดข้องใดๆ ในการให้บริการไปพัฒนาการให้บริการให้ดียิ่งขึ้น
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
 
                     </div>
@@ -530,22 +615,61 @@
                         <div class="col-md-1">
                             <p>2.7</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             ให้เวลาแก่ผู้รับบริการเป็นพิเศษ เพื่อช่วยแก้ปัญหาให้แก่ผู้รับบริการ
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="col-md-1">
                             <p>2.8</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             ให้ข้อมูล ข่าวสาร ที่เกี่ยวข้องกับงานที่กำลังให้บริการอยู่ ซึ่งเป็นประโยชน์แก่ผู้รับบริการ แม้ว่าผู้รับบริการจะไม่ได้ถามถึง หรือไม่ทราบมาก่อน
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="col-md-1">
                             <p>2.9</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             นำเสนอวิธีการในการให้บริการที่ผู้รับบริการจะได้รับประโยชน์สูงสุด
                         </div>
-
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -583,22 +707,60 @@
                         <div class="col-md-1">
                             <p>3.1</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             ศึกษาหาความรู้ สนใจเทคโนโลยีและองค์ความรู้ใหม่ๆ ในสาขาอาชีพของตน
                         </div>
-
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="col-md-1">
                             <p>3.2</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             พัฒนาความรู้ความสามารถของตนให้ดียิ่งขึ้น
                         </div>
-
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="col-md-1">
                             <p>3.3</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             ติดตามเทคโนโลยีและความรู้ใหม่ๆ อยู่เสมอ ด้วยการสืบค้นข้อมูลจากแหล่งต่างๆ ที่จะเป็นประโยชน์ต่อการปฏิบัติราชการ
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
 
@@ -611,14 +773,40 @@
                         <div class="col-md-1">
                             <p>3.4</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             รอบรู้ในเทคโนโลยีหรือองค์ความรู้ใหม่ๆ ในสาขาอาชีพของตน หรือที่เกี่ยวข้อง ซึ่งอาจมีผลกระทบต่อการปฏิบัติหน้าที่ราชการของตน
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="col-md-1">
                             <p>3.5</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             รับรู้ถึงแนวโน้มวิทยาการที่ทันสมัย และเกี่ยวข้องกับงานตน อย่างต่อเนื่อง
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
 
                     </div>
@@ -630,14 +818,41 @@
                         <div class="col-md-1">
                             <p>3.6</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             สามารถนำวิชาการ ความรู้ หรือเทคโนโลยีใหม่ๆ มาประยุกต์ใช้ในการปฏิบัติหน้าที่ราชการได้
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="col-md-1">
                             <p>3.7</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             สามารถแก้ปัญหาที่อาจเกิดจากการนำเทคโนโลยีใหม่มาใช้ในการปฏิบัติหน้าที่ราชการได้
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
 
 
@@ -677,14 +892,40 @@
                         <div class="col-md-1">
                             <p>4.1</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             ปฏิบัติหน้าที่ด้วยความสุจริต ไม่เลือกปฏิบัติ ถูกต้องตามหลักกฎหมาย และวินัยข้าราชการ
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="col-md-1">
                             <p>4.2</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             แสดงความคิดเห็นตามหลักวิชาชีพอย่างสุจริต
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
 
@@ -697,15 +938,41 @@
                         <div class="col-md-1">
                             <p>4.3</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             รักษาคำพูด มีสัจจะ และเชื่อถือได้
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="col-md-1">
                             <p>4.4</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             แสดงให้ปรากฏถึงความมีจิตสำนึกในความเป็นข้าราชการ
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
 
                     </div>
@@ -717,14 +984,40 @@
                         <div class="col-md-1">
                             <p>4.5</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             ยึดมั่นในหลักการ จรรยาบรรณแห่งวิชาชีพ และจรรยาข้าราชการ ไม่เบี่ยงเบนด้วยอคติหรือผลประโยชน์ กล้ารับผิด และรับผิดชอบ
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="col-md-1">
                             <p>4.6</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             เสียสละความสุขส่วนตน เพื่อให้เกิดประโยชน์แก่ทางราชการ
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
 
 
@@ -764,22 +1057,61 @@
                         <div class="col-md-1">
                             <p>5.1</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             <p>สนับสนุนการตัดสินใจของทีม และทำงานในส่วนที่ตนได้รับมอบหมาย</p>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="col-md-1">
                             <p>5.2</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             <p>รายงานให้สมาชิกทราบความคืบหน้าของการดำเนินงานของตนในทีม</p>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="col-md-1">
                             <p>5.3</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             <p>ให้ข้อมูล ที่เป็นประโยชน์ต่อการทำงานของทีม</p>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
 
@@ -792,20 +1124,59 @@
                         <div class="col-md-1">
                             <p>5.4</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             <p>สร้างสัมพันธ์  เข้ากับผู้อื่นในกลุ่มได้ดี</p>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="col-md-1">
                             <p>5.5</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             <p>ให้ความร่วมมือกับผู้อื่นในทีมด้วยดี</p>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="col-md-1">
                             <p>5.6</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             <p>กล่าวถึงเพื่อนร่วมงานในเชิงสร้างสรรค์ และแสดงความเชื่อมั่นในศักยภาพของเพื่อนร่วมทีม ทั้งต่อหน้าและลับหลัง</p>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
 
                     </div>
@@ -817,20 +1188,59 @@
                         <div class="col-md-1">
                             <p>5.7</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             <p>รับฟังความเห็นของสมาชิกในทีม และเต็มใจเรียนรู้จากผู้อื่น</p>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="col-md-1">
                             <p>5.8</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             <p>ตัดสินใจหรือวางแผนงานร่วมกันในทีมจากความคิดเห็นของเพื่อนร่วมทีม</p>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="col-md-1">
                             <p>5.9</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             <p>ประสานและส่งเสริมสัมพันธภาพอันดีในทีม เพื่อสนับสนุนการทำงานร่วมกันให้มีประสิทธิภาพยิ่งขึ้น</p>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
 
 
@@ -870,14 +1280,40 @@
                         <div class="col-md-1">
                             <p>6.1</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             <p>ภาคภูมิใจในวัฒนธรรมของไทย ขณะที่เห็นคุณค่าและสนใจที่จะเรียนรู้วัฒนธรรมของผู้อื่น</p>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="col-md-1">
                             <p>6.2</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             <p>ยอมรับความแตกต่างทางวัฒนธรรม และไม่ดูถูกวัฒนธรรมอื่นว่าด้อยกว่า</p>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
 
                         {{------------------------- ระดับที่ 2 -----------------------------------}}
@@ -889,16 +1325,42 @@
                         <div class="col-md-1">
                             <p>6.3</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             <p>เข้าใจมารยาท กาลเทศะ ตลอดจนธรรมเนียมปฏิบัติของวัฒนธรรมที่แตกต่าง และพยายามปรับตัวให้สอดคล้อง</p>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="col-md-1">
                             <p>6.4</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             <p>สื่อสารด้วยวิธีการ เนื้อหา และถ้อยคำที่เหมาะสมกับวัฒนธรรมของผู้อื่น</p>
                         </div>
 
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     {{--------------------------------------- ระดับที่ 3 --------------------------------}}
                     <div class="row">
@@ -908,20 +1370,59 @@
                         <div class="col-md-1">
                             <p>6.5</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             <p>เข้าใจบริบท และนัยสำคัญของวัฒนธรรมต่าง ๆ</p>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="col-md-1">
                             <p>6.6</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             <p>เข้าใจรากฐานทางวัฒนธรรมที่แตกต่างอันจะทำให้เข้าใจวิธีคิดของผู้อื่น</p>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="col-md-1">
                             <p>6.7</p>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-md-9">
                             <p>ไม่ตัดสินผู้อื่นจากความแตกต่างทางวัฒนธรรม แต่ต้องพยายามทำความเข้าใจ เพื่อให้สามารถทำงานร่วมกันได้</p>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group input-group-sm mb-2">
+                                <label class="input-group-text" for="score">คะแนน</label>
+                                <select class="form-select"  name ="score11">
+                                    <option selected="">เลือก</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>

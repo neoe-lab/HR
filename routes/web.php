@@ -6,6 +6,7 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\YearController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\FollowController;
 use App\Models\Question;
 
 // ------------------------------ Authentication --------------------
@@ -44,4 +45,11 @@ Route::get('/performance/list-person-performance',[QuestionController::class,'li
 Route::get('/performance/form',[QuestionController::class,'performance'])->name('form-performance');
 Route::post('/performance/answer',[QuestionController::class,'answerPerformance'])->name('answer');
 // show person and self questions
+
+
+//------------------------------ Follow ติดตามผลการประเมิน ---------------------------
+// สมรรถนะ
+Route::get('/follow-performance',[FollowController::class,'follow_performance'])->name('follow-performance');
+// สัมพันธภาพ
+Route::get('/follow-relationship',[FollowController::class,'follow_relationship'])->name('follow-relationship');
 

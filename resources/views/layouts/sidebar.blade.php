@@ -51,10 +51,10 @@
                     </a>
                     <ul class="submenu ">
                         <li class="submenu-item ">
-                            <a href="#">การประเมินสมรรถนะ</a>
+                            <a href=" {{ route('follow-performance')}}">การประเมินสมรรถนะ</a>
                         </li>
                         <li class="submenu-item ">
-                            <a href="#">การประเมินสัมพันธภาพ</a>
+                            <a href="{{ route('follow-relationship')}}">การประเมินสัมพันธภาพ</a>
                         </li>
                     </ul>
                 </li>
