@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateYearsTable extends Migration
+class CreateWhoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateYearsTable extends Migration
      */
     public function up()
     {
-        Schema::create('years', function (Blueprint $table) {
+        Schema::create('who', function (Blueprint $table) {
             $table->id();
-            $table->string('year');
-            $table->string('time');
-            $table->enum('status',['activate','deactivate']);
+            $table->string('who');
+            $table->string('self');
+            $table->string('time_id');
+            $table->string('type','10');
+            $table->enum('status',['0','1'])->default('0');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateYearsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('years');
+        Schema::dropIfExists('who');
     }
 }

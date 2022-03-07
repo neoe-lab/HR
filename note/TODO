@@ -1,0 +1,75 @@
+
+# Design by NEOE LAB
+
+    # สร้างฐานข้อมูลตามที่ออกแบบ และ ระบุชนิดของ filed ด้วย
+   # login
+            - login username and password
+            - check permision
+            - check department
+            - check level
+                    - form evaluations check level 3 level
+            - logout
+    # manage User
+            -   view user and details
+            -   edit user
+            -   delete user
+    # manage time
+        - view time
+        - edit
+        - delate
+        - set status
+
+    # follow การประเมินว่าครบหมดรึยัง
+        - view
+        - search and filter
+    # menu slider menu
+        - active menu
+        - active submenu
+        - show fullname user
+        - show permision
+    # main templae
+        - show slide menu Done /
+        - show menu Done /
+        - show sub menu Done /
+    # report result evaluation
+        - head
+            - ระดับหัวหน้าดูผลการประเมิน
+        - user
+            - รายบุคคล
+        - search and filter
+            - year and time
+            - department
+    # list person evaluation
+        - get data in whoTable where time activate
+            exp : SELECT * FROM `who`
+                inner join time on who.time_id = time.id
+                where time.status = '1';
+        - random user evaluation ไม่ซ้ำกัน
+            - แยกแผนก
+            - get data profile user list = ['A','B','C','D','E'] get data friend in department check department
+              then user login
+              exp : Select * form user department = session['department'];
+            - click button random to work random list data
+            - random to save
+    # profiles
+        - change password
+        - change photo
+        - change address
+        - change fistname and lastname
+    # department
+        - add department
+        - edit department
+        - delate department
+    # permission
+        - add permission
+        - update permission
+        - delate permission
+    # form evaluation
+        - performance form evaluation
+            - form Done /
+            - sent data to database Done /
+            - get whoID in who_tables
+            - calculate score before sending data
+            - split quest that is level user 20%
+        - relationship form evaluation
+
