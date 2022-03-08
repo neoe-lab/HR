@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateYearsTable extends Migration
+class CreatePermissionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateYearsTable extends Migration
      */
     public function up()
     {
-        Schema::create('years', function (Blueprint $table) {
+        Schema::create('permission', function (Blueprint $table) {
             $table->id();
-            $table->string('year');
-            $table->string('time');
-            $table->enum('status',['activate','deactivate']);
+            $table->string('permission');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateYearsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('years');
+        Schema::dropIfExists('permission');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWhoTable extends Migration
+class CreateDepartmentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateWhoTable extends Migration
      */
     public function up()
     {
-        Schema::create('who', function (Blueprint $table) {
+        Schema::create('department', function (Blueprint $table) {
             $table->id();
-            $table->string('who');
-            $table->string('self');
-            $table->string('time_id');
-            $table->string('type','10');
-            $table->enum('status',['0','1'])->default('0');
+            $table->string('department');
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ class CreateWhoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('who');
+        Schema::dropIfExists('department');
     }
 }

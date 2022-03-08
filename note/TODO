@@ -2,6 +2,13 @@
 # Design by NEOE LAB
 
     # สร้างฐานข้อมูลตามที่ออกแบบ และ ระบุชนิดของ filed ด้วย
+    - table permission DONE /
+    - level DONE /
+    - user DONE /
+    - profile DONE /
+    - who DONE /
+    - answer DONE /
+    - time DONE /
    # login
             - login username and password
             - check permision
@@ -13,6 +20,7 @@
             -   view user and details
             -   edit user
             -   delete user
+            -   reset password
     # manage time
         - view time
         - edit

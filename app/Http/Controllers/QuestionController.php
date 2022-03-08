@@ -13,10 +13,11 @@ class QuestionController extends Controller
 
     // show person and self evaluation performance
     public function listPersonPerformance(){
+        //
+        $data['who'] = DB::table('who')->get(['id','who','self','status']);
 
 
-
-        return view('evaluations.performance.list_person');
+        return view('evaluations.performance.list_person',$data);
     }
 
 
@@ -33,13 +34,13 @@ class QuestionController extends Controller
         for($i=0;$i<count($num);$i++){
 
             $datasave = [
-                'who_id' => $who,
+                'whoID' => $who,
                 'no_q' => $num[$i],
                 'score' => $score[$i],
 
             ];
 
-            DB::table('answers')->insert($datasave);
+            DB::table('answer')->insert($datasave);
 
         }
 

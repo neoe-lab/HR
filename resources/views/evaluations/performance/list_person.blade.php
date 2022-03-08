@@ -62,9 +62,9 @@
             </div>
         </section>
 @php
-    $permision = 1;
+    $permision = 'head';
 @endphp
-@if ($permision == 1)
+@if ($permision == 'head')
 <section class="section">
     <div class="card">
         <div class="card-header">
@@ -97,7 +97,7 @@
     </div>
 </section>
 
-@elseif ($permision == 2)
+{{-- @elseif ($permision == 'user') --}}
 <section class="section">
     <div class="card">
         <div class="card-header">
@@ -120,14 +120,19 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($who as $who )
+
                     <tr>
-                        <td>014</td>
-                        <td>นายยัสลัน มายุดิน</td>
+                        <td>{{ $who->id }}</td>
+                        <td>{{ $who->who}}</td>
+                        {{-- <td>นายยัสลัน มายุดิน</td> --}}
                         <td>กลุ่มงานเภสัชกรรมชุมชน</td>
                         <td>
                             <a href="" class="badge bg-danger">ยังไม่ประเมิน</a>
                         </td>
                     </tr>
+                    @endforeach
+
                 </tbody>
             </table>
         </div>

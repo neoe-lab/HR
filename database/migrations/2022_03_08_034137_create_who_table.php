@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateQuestionsTable extends Migration
+class CreateWhoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateQuestionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('questions', function (Blueprint $table) {
+        Schema::create('who', function (Blueprint $table) {
             $table->id();
-            // $table->string('who');
-            // $table->foreignId('profile_id');
-            // $table->foreignId('year_id');
-            // $table->foreignId('question_id');
-            // $table->integer('score');
+            $table->string('who',30);
+            $table->string('self',30);
+            $table->string('timeID',30);
+            $table->string('type',30);
+            $table->enum('status',['0','1'])->default('0');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateQuestionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('questions');
+        Schema::dropIfExists('who');
     }
 }
